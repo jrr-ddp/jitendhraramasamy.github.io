@@ -274,7 +274,7 @@ const sr = ScrollReveal({
     //reset: true /* Animations repeat */
 })
 
-sr.reveal('.home__data, .portfolio__container, .testimonial__content, .footer__container')
+sr.reveal('.home__data, .portfolio__container, .swiper-wrapper, .footer__container')
 sr.reveal('.home__info div', {delay: 600, origin: 'bottom', interval: 100})
 sr.reveal('.about__container', {origin: 'left'})
 sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(2)', {origin: 'right'})

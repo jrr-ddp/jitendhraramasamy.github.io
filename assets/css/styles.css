@@ -2269,9 +2269,9 @@ body.dark-theme {
     column-gap: 1rem;
   }
 
-  .footer__social {
+  /* .footer__social {
     justify-self: flex;
-  }
+  } */
 
   .footer__copy {
     margin-top: 4rem;

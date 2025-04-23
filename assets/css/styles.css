@@ -2270,7 +2270,7 @@ body.dark-theme {
   }
 
   .footer__social {
-    justify-self: flex-end;
+    justify-self: flex;
   }
 
   .footer__copy {

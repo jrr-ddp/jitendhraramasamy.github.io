@@ -957,16 +957,38 @@ body.dark-theme {
 
 .about__info {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: var(--mb-1-5);
   margin-right: var(--mb-1);
-  margin-top: var(--mb-2);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
 }
 
 .about__info-icon {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-right: var(--mb-3);
-  margin-top: var(--mb-1-5);
-  font-size: xx-large;
+  margin-top: var(--mb-0-5);
+  font-size: 3rem;
+  animation: bounce 2s infinite;
 }
 
 .about__info-title {
@@ -989,8 +1011,8 @@ body.dark-theme {
   display: flex;
   justify-content: center;
   margin-top: var(--mb-1-5);
-  margin-left: 4rem;
-  width: 200px;
+  margin-left: 3rem;
+  width: 250px;
 }
 
 .about__button .button--flex--small {
@@ -1087,27 +1109,31 @@ body.dark-theme {
 }
 
 .skills__wpf {
-  width: 80%;
+  width: 70%;
+}
+
+.skills__asp {
+  width: 45%;
 }
 
 .skills__html {
-  width: 70%;
+  width: 55%;
 }
 
 .skills__js {
-  width: 25%;
+  width: 35%;
 }
 
 .skills__csharp {
-  width: 70%;
+  width: 50%;
 }
 
 .skills__vb {
-  width: 30%;
+  width: 10%;
 }
 
 .skills__java {
-  width: 22%;
+  width: 35%;
 }
 
 .skills__php {
@@ -1119,39 +1145,39 @@ body.dark-theme {
 }
 
 .skills__mysql {
-  width: 90%;
+  width: 45%;
 }
 
 .skills__oracle {
-  width: 35%;
+  width: 15%;
 }
 
 .skills__mssql {
-  width: 60%;
+  width: 40%;
 }
 
 .skills__SSIS {
-  width: 30%;
+  width: 10%;
 }
 
 .skills__xd {
-  width: 45%;
+  width: 15%;
 }
 
 .skills__photoshop {
-  width: 35%;
+  width: 15%;
 }
 
 .skills__illustrator {
-  width: 25%;
+  width: 30%;
 }
 
 .skills__powerbi {
-  width: 45%;
+  width: 25%;
 }
 
 .skills__tableau {
-  width: 35%;
+  width: 15%;
 }
 
 .skills__crreport {
@@ -1159,15 +1185,15 @@ body.dark-theme {
 }
 
 .skills__ssrs {
-  width: 15%;
+  width: 10%;
 }
 
 .skills__excel {
-  width: 85%;
+  width: 70%;
 }
 
 .skills__powerpoint {
-  width: 55%;
+  width: 50%;
 }
 
 .skills__close .skills__list {
@@ -2047,6 +2073,10 @@ body.dark-theme {
   .home__content {
     grid-template-columns: 0.25fr 3fr;
     padding: 1px 1px 0 0;
+  }
+
+  .about__info {
+    margin-right: 0rem;
   }
 
   .skills__title {

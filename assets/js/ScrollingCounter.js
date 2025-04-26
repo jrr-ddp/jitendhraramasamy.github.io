@@ -33,3 +33,39 @@ function animateCounter(element, end, duration = 2000) {
     const currentYear = new Date().getFullYear();
     yearSpan.textContent = currentYear;
   });
+
+
+   /*==================== WORD TYPING & ERASE LOOP ====================*/
+   const roles = [
+    "Full Stack Developer",
+    "Integration &",
+    "Automation Specialist",
+    "Analyst"
+  ];
+
+  const textEl = document.getElementById("typewriter-text");
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+      textEl.textContent = currentRole.substring(0, charIndex--);
+    } else {
+      textEl.textContent = currentRole.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentRole.length + 1) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // Pause before deleting
+      return;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100); // Typing vs deleting speed
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);

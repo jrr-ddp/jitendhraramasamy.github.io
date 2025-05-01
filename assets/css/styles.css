@@ -353,6 +353,11 @@ body.dark-theme {
   overflow: hidden; /* For animation */
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
 /* .section__title {
     font-size: var(--h1-font-size);
 } */
@@ -1423,40 +1428,80 @@ body.dark-theme {
 
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
-  overflow: initial;
+  padding: 2rem 1rem 4rem;
+  position: relative;
+}
+
+.portfolio__container .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.portfolio__container .swiper-slide {
+  display: flex;
+  align-items: stretch;
+  height: auto;
+}
+
+.portfolio__container .swiper-container {
+  scroll-behavior: smooth;
 }
 
 .portfolio__content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* max-width: 300px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--container-color); */
+}
+
+/* .portfolio__container .swiper-slide {
+  display: flex;
   justify-content: center;
-  padding: 0 1.5rem;
+  align-items: center;
+  width: auto;
+} */
+
+.portfolio__content.active-slide {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio__content:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: 0.4s;
 }
 
 .portfolio__img {
   width: 265px;
   border-radius: 0.75rem;
   margin-bottom: 1.25rem;
-  justify-self: center;
 }
 
 .portfolio__title {
-  font-size: var(--h2-font-size);
-  margin-bottom: var(--mb-1);
-  margin: 0.5rem 0 1.25rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .portfolio__description {
-  color: var(--text-color-light);
-  margin-bottom: var(--mb-0-75);
+  color: #777;
+  margin-bottom: 1rem;
 }
 
 .portfolio__button {
-  color: var(--title-color);
   display: inline-flex;
   align-items: center;
   column-gap: 0.5rem;
-  columns: var(--title-color);
-  font-weight: var(--font-semi-bold);
+  color: #837f7f;
+  font-weight: bold;
 }
 
 .portfolio__button i {
@@ -1468,87 +1513,18 @@ body.dark-theme {
   transform: translateX(0.25rem);
 }
 
-.portfolio__button:hover .button__icon {
-  transform: translateX(0.25rem);
-}
-
-/* .swiper-button-prev::after,
-.swiper-button-next::after {
-    width: initial;
-    height: initial;
-    margin: initial;
-    font-size: 2.5rem;
-    color: var(--title-color);
-} */
-
 .swiper-portfolio-icon {
   font-size: 2rem;
-  color: var(--title-color);
+  color: #333;
 }
 
-/* .swiper-button-prev {
-    left: -1rem;
-    top: 4.5rem;
+.swiper-pagination {
+  bottom: -30px;
+  position: absolute;
 }
 
-.swiper-button-next {
-    right: -1rem;
-    top: 4.5rem;
-} */
-
-/* .swiper-container-horizontal>.swiper-pagination-bullets {
-    bottom: -2.5rem;
-} */
-
-/* .swiper-pagination-bullet-active {
-    background-color: var(--first-color);
-} */
-
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
-  outline: none;
-}
-
-/*Swiper class*/
-.portfolio__container .swiper-button-prev::after,
-.portfolio__container .swiper-button-next::after {
-  content: "";
-}
-
-.portfolio__container .swiper-button-prev,
-.portfolio__container .swiper-button-next {
-  width: initial;
-  height: initial;
-  margin: initial;
-  font-size: 2.5rem;
-  color: var(--title-color);
-}
-
-.portfolio__container .swiper-button-prev {
-  left: -1rem;
-  top: 4.5rem;
-}
-
-.portfolio__container .swiper-button-next {
-  right: -1rem;
-  top: 4.5rem;
-}
-.portfolio__container .swiper-slide {
-  margin-bottom: 4.5rem;
-}
-
-.portfolio__container .swiper-pagination {
-  bottom: -2.5rem;
-}
-
-.portfolio__container .swiper-pagination-bullet {
-  background-color: var(--text-color-light);
-  opacity: initial;
-}
-
-.portfolio__container .swiper-pagination-bullet-active {
-  background-color: var(--title-color);
+.swiper-pagination-bullet-active {
+  background-color: #333;
 }
 
 /*==================== PROJECT IN MIND ====================*/
@@ -1671,6 +1647,12 @@ body.dark-theme {
 }
 
 /*Swiper class*/
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet {
+  outline: none;
+}
 
 .testimonial__container .swiper-slide {
   margin-bottom: 4rem;

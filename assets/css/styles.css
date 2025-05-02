@@ -353,8 +353,8 @@ body.dark-theme {
   overflow: hidden; /* For animation */
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.portfolio__container .swiper-button-next,
+.portfolio__container .swiper-button-prev {
   display: none !important;
 }
 

@@ -40,7 +40,8 @@ function animateCounter(element, end, duration = 2000) {
     "Full Stack Developer",
     "Integration &",
     "Automation Specialist",
-    "Analyst"
+    "Analyst",
+    "Aspiring AI Engineer"
   ];
 
   const textEl = document.getElementById("typewriter-text");
